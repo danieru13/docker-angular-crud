@@ -1,5 +1,5 @@
 <div class="container">
-    <div *ngFor = "let business of businesses">
+    <div *ngFor = "let business of businesses" [routerLink]="['/business/edit', business._id]">
         <p>Person Name: {{business.person_name}}</p>
         <p>Business Name: {{business.business_name}}</p>
         <p>Business GST Number: {{business.business_gst_number}}</p>

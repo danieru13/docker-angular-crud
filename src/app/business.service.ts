@@ -22,4 +22,19 @@ export class BusinessService {
   getAllBusinesses() : Observable<any> {
     return this.http.get(`${this.uri}/`);
   }
+
+  getBusiness(id: string) {
+    return this.http.get(`${this.uri}/edit/${id}`)
+  }
+
+  editBusiness(person_name, business_name, business_gst_number, id: string) {
+    const obj = {
+      person_name: person_name,
+      business_name: business_name,
+      business_gst_number: business_gst_number
+    };
+    console.log(obj);
+    this.http.post(`${this.uri}/update/${id}`, obj)
+      .subscribe(res => console.log('Done'));
+  }
 }
