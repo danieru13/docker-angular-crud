@@ -45,8 +45,10 @@ export class CrudEditComponent implements OnInit, OnDestroy {
     });
   }
 
-  editBusiness(person_name, busines_name, business_gst_number, id) {
+ editBusiness(person_name, busines_name, business_gst_number, id) {
     this.bs.editBusiness(person_name, busines_name, business_gst_number, id);
+    this.gotoList();
+
   }
 
   ngOnDestroy() {
@@ -55,6 +57,11 @@ export class CrudEditComponent implements OnInit, OnDestroy {
 
   gotoList() {
     this.router.navigate(['/business']);
+  }
+
+  delete(id) {
+    let res = this.bs.delete(id);
+    this.gotoList();
   }
 
 }

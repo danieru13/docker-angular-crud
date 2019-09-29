@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { BusinessService } from '../business.service';
 @Component({
@@ -9,7 +10,7 @@ import { BusinessService } from '../business.service';
 })
 export class CrudAddComponent implements OnInit {
   angForm: FormGroup;
-  constructor(private fb: FormBuilder, private bs: BusinessService) {
+  constructor(private fb: FormBuilder, private bs: BusinessService, private router: Router) {
     this.createForm();
   }
   createForm() {
@@ -19,9 +20,16 @@ export class CrudAddComponent implements OnInit {
       business_gst_number: ['', Validators.required]
     });
   }
+
   addBusiness(person_name, busines_name, business_gst_number) {
     this.bs.addBusiness(person_name, busines_name, business_gst_number);
+    this.gotoList();
   }
+
+  gotoList() {
+    this.router.navigate(['/business']);
+  }
+
   ngOnInit() {
   }
 }

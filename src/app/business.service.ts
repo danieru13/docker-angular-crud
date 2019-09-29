@@ -37,4 +37,9 @@ export class BusinessService {
     this.http.post(`${this.uri}/update/${id}`, obj)
       .subscribe(res => console.log('Done'));
   }
+
+  delete(id: string){
+    this.http.get(`${this.uri}/delete/${id}`)
+      .subscribe(res => console.log('Done'));
+  }
 }
