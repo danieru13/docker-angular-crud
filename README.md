@@ -36,7 +36,7 @@ El modelo en específico de alumno es este:
 
 `/student/delete/{id}` Borrar la info de un alumno en específico por ID.
 
-### POST
+#### POST
 
 `/student/add` Agrega un alumno a la base de datos.
 
