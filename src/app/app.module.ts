@@ -9,13 +9,15 @@ import { CrudAddComponent } from './crud-add/crud-add.component';
 import { CrudGetComponent } from './crud-get/crud-get.component';
 import { CrudEditComponent } from './crud-edit/crud-edit.component';
 import { BusinessService } from './business.service';
+import { ArabicToRomanComponent } from './arabic-to-roman/arabic-to-roman.component';
 @NgModule({
   declarations: [
     AppComponent,
 
     CrudAddComponent,
     CrudGetComponent,
-    CrudEditComponent
+    CrudEditComponent,
+    ArabicToRomanComponent
   ],
   imports: [
     BrowserModule,
