@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { RomanNumeralsService } from '../roman-numerals.service';
 
 @Component({
   selector: 'app-arabic-to-roman',
@@ -6,10 +7,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./arabic-to-roman.component.css']
 })
 export class ArabicToRomanComponent implements OnInit {
+  result: String = '';
 
-  constructor() { }
+  constructor(private rns: RomanNumeralsService) { }
 
   ngOnInit() {
   }
-
+  
+  arabicToRoman(num: number){
+    this.result = this.rns.arabicToRoman(num);
+    console.log(this.result);
+  }
 }
